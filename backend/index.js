@@ -1,10 +1,11 @@
+require('dotenv').config();
 const connectTomongo = require('./db');
 const express = require('express'); //Express library ko import kiya.
 const cors = require('cors');
 connectTomongo();
 
 const app = express(); //Ye Express application/server ka instance bana raha hai.
-const port = 400;
+const port = process.env.PORT || 400;
 // CORS configuration
 //Browser ke liye ye dono alag origins hain. Isliye browser backend se poochta hai ki kya ye frontend request bhej sakta hai?
 // Backend ko permission dene ke liye CORS configure karte hain.
