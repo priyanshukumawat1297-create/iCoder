@@ -1,14 +1,14 @@
-const mongoose = require('mongoose');  //"Mujhe mongoose library chahiye, jo MongoDB ke saath kaam karne mein help karegi."Tu backend mein MongoDB use kar raha hai.
 
-const mongoURI = "mongodb://localhost:27019";
+const mongoose = require('mongoose');
 
-const connectTomongo = async()=>{
+const connectTomongo = async () => {
     try {
-        await mongoose.connect("mongodb://localhost:27019/bootstrap");
-        console.log("Connected to mongo succesfully");
+        await mongoose.connect(process.env.MONGO_URI);
+        console.log("Connected to MongoDB Atlas successfully");
     } catch (error) {
-        console.log(error);
+        console.error("MongoDB connection failed:", error.message);
+        process.exit(1);
     }
-}
+};
 
 module.exports = connectTomongo;
