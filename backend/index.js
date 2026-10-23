@@ -10,9 +10,7 @@ const port = process.env.PORT || 400;
 //Browser ke liye ye dono alag origins hain. Isliye browser backend se poochta hai ki kya ye frontend request bhej sakta hai?
 // Backend ko permission dene ke liye CORS configure karte hain.
 
-app.use(cors({
-    origin: 'http://127.0.0.1:5500'
-}));
+app.use(cors());
 
 // app.get("/",(req,res)=>{
 //     res.send("Hello world");
