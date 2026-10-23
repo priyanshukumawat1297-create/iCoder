@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:400";
+const API_URL = " https://icoder-backend.onrender.com";
 
 // SIGNUP
 document.getElementById("signupForm").addEventListener("submit", async function (e) {
